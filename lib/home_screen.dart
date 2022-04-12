@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:googlemapsflutter/screens/current_location_screen.dart';
 import 'package:googlemapsflutter/screens/map_screen.dart';
+import 'package:googlemapsflutter/screens/search_places_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -40,6 +41,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 );
               },
               child: const Text('Current Location'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (BuildContext context) {
+                    return const SearchPlacesScreen();
+                  }),
+                );
+              },
+              child: const Text('Search Places'),
             )
           ],
         ),
